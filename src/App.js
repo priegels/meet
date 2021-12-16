@@ -7,18 +7,6 @@ import { extractLocations, getEvents } from './api';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
-  }
-
-  componentWillUnmount(){
-    this.mounted = false;
-  }
 
   state = {
     events: [],
@@ -36,7 +24,21 @@ class App extends Component {
     });
   }
 
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.mounted = false;
+  }
+
   render() {
+    console.log(this.state.events);
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
