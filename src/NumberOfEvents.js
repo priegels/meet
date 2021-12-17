@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
 
- /* state = {
-    numberOfEvents: 32
-  }
-*/
-
   render() {
     return (
       <div className="NumberOfEvents">
+        <h4>Choose the number of events you wish to display</h4>
         <input 
           className="number-of-events"
           type="number"
-          value={this.props.numberOfEvents}>
+          value={this.props.numberOfEvents}
+          onChange={(e) => this.props.updateNumberOfEvents(e)}>
         </input>
       </div>
     );
