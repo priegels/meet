@@ -22,7 +22,7 @@
   background-image: url(./img/loginview.jpg);
   background-size: cover;
   opacity: 0.55;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
