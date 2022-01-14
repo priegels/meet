@@ -83,6 +83,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+  margin-top: 5px;
 }
 
 .city {
@@ -99,9 +100,19 @@ input[type="number"] {
   position: relative;
 }
 
+.Alert {
+  position: relative !important;
+  top: 0px !important;
+  font-weight: bold;
+  background-color: #fff9eba1;
+  width: fit-content;
+  margin: auto;
+  border-width: 3px;
+  border-radius: 4px;
+}
+
 .suggestions {
   width: 250px;
-  position: absolute;
   z-index: 2;
   align-self: center;
   margin: 0;
