@@ -15,15 +15,16 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
-    currentLocation: 'all'    
+    currentLocation: 'all',
+    errorText: ''    
   }
 
-  updateEvents = (location, numberOfEvents) => {
+  updateEvents = (location) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      
+      const { numberOfEvents } = this.state;
       this.setState({
         events: locationEvents.slice(0, numberOfEvents),
         currentLocation: location
@@ -32,17 +33,11 @@ class App extends Component {
   }
 
   updateNumberOfEvents = async (e) => {
-    const number = e.target.value;
-    if (number > 0 && number < 33) {
-      await this.setState({
-        numberOfEvents: number,
-      });
-      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
-    } else {
-      await this.setState({
-        numberOfEvents: 32
-      });
-    }
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: e
+    });
+    this.updateEvents(currentLocation, e);    
   }  
 
   componentDidMount() {
