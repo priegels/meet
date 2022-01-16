@@ -7,6 +7,7 @@ import { extractLocations, getEvents } from './api';
 
 import logo from './img/logo/logo.svg';
 import './nprogress.css';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
 
@@ -16,7 +17,8 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: 'all',
-    errorText: ''    
+    errorText: '',
+    warningText: 'OFFLINE USE DETECTED'    
   }
 
   updateEvents = (location) => {
@@ -57,6 +59,7 @@ class App extends Component {
     console.log(this.state.events);
     return (
       <div className="App">
+      { !navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text='' />)}
         <img src={logo} alt="meet app logo" height={200} width={200} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
