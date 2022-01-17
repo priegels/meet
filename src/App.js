@@ -58,7 +58,7 @@ class App extends Component {
     console.log(this.state.events);
     return (
       <div className="App">
-        {!navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text='You are online!' />)}
+        {!navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text='' />)}
         <img src={logo} alt="meet app logo" height={200} width={200} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
