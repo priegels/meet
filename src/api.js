@@ -28,21 +28,6 @@ export const checkToken = async (accessToken) => {
   return result;
 };
 
-// remove code from URL once finished with it
-const removeQuery = () => {
-  if (window.history.pushState && window.location.pathname) {
-    var newurl = 
-      window.location.protocol + 
-      "//" + 
-      window.location.host + 
-      window.location.pathname;
-    window.history.pushState("", "", newurl);
-  } else {
-    newurl = window.location.protocol + "//" + window.location.host;
-    window.history.pushState("", "", newurl);
-  }
-};
-
 //getEvents function
 export const getEvents = async () => {
   NProgress.start();
@@ -94,6 +79,21 @@ export const getAccessToken = async () => {
   }
   return accessToken;
 }
+
+// remove code from URL once finished with it
+const removeQuery = () => {
+  if (window.history.pushState && window.location.pathname) {
+    var newurl = 
+      window.location.protocol + 
+      "//" + 
+      window.location.host + 
+      window.location.pathname;
+    window.history.pushState("", "", newurl);
+  } else {
+    newurl = window.location.protocol + "//" + window.location.host;
+    window.history.pushState("", "", newurl);
+  }
+};
 
 // get a new token
 const getToken = async (code) => {
