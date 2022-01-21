@@ -3,12 +3,13 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import WelcomeScreen from './WelcomeScreen';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 
 import logo from './img/logo/logo.svg';
 import './nprogress.css';
 import { WarningAlert } from './Alert';
-import WelcomeScreen from './WelcomeScreen';
+
 
 class App extends Component {
 
