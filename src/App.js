@@ -9,6 +9,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import logo from './img/logo/logo.svg';
 import './nprogress.css';
 import { WarningAlert } from './Alert';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 
 class App extends Component {
@@ -60,6 +61,16 @@ class App extends Component {
     this.updateEvents(currentLocation, e);    
   }  
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return { city, number };
+    })
+    return data;
+  };
+
 
 
   componentWillUnmount(){
@@ -73,6 +84,21 @@ class App extends Component {
         <img src={logo} alt="meet app logo" height={200} width={200} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+          <h4>Events in each city</h4>
+
+          <ScatterChart
+            width={800}
+            height={400}
+            margin={{
+              top: 20, right: 20, bottom: 20, left: 20,
+            }}
+            >
+            <CartesianGrid />
+            <XAxis type="category" dataKey="city" name="city" />
+            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
