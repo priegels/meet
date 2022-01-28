@@ -49,6 +49,7 @@ h3 {
 }
 
 h4 {
+  position: relative;
   font-size: 16px;
   color: var(--text-color-title);
 }
@@ -281,6 +282,31 @@ input[type="number"] {
   font-size: 14px;
   letter-spacing: 0.2px;
   font-family: "Roboto";
+}
+
+.recharts-surface {
+  background-color: var(--secondary-color);
+  opacity: 0.75;
+  position: relative;
+  padding-right: 30px;
+}
+
+line {
+  stroke:black;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: black;
+}
+
+.recharts-symbols {
+  fill:rgb(53, 99, 53);
+}
+
+tspan {
+  font-weight: 700;
+  color: black;
+  fill: black;
 }
 
 @media only screen and (min-width: 992px) {
