@@ -285,8 +285,7 @@ input[type="number"] {
 }
 
 .recharts-surface {
-  background-color: var(--secondary-color);
-  opacity: 0.75;
+  background-color: #fff9eba1;
   position: relative;
   padding-right: 30px;
 }
