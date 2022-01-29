@@ -7,9 +7,14 @@
 :root {
   --background-color: #4c2f1b;  
   --secondary-color: #e8eadff6;
-  --tertiary-color: #055a05;
+  --secondary-color-transparent: #fff9eba1;
+  --accent-color: #055a05;
   --text-color-title: #fdfff4f6;
-  --text-color-event: black; 
+  --text-color: black; 
+
+  --h1-size: 50px;
+  --h3-size: 20px;
+  --h4-size: 16px;
 }
 
 .App * {
@@ -37,18 +42,18 @@
 
 h1 {
   position: relative;
-  font-size: 50px;
+  font-size: var(--h1-size);
   color: var(--text-color-title);
 }
 
 h3 {
-  font-size: 20px;
+  font-size: var(--h3-size);
   color: var(--text-color-title);
 }
 
 h4 {
   position: relative;
-  font-size: 16px;
+  font-size: var(--h4-size);
   color: var(--text-color-title);
 }
 
@@ -60,7 +65,7 @@ p {
   position: relative !important;
   top: 0px !important;
   font-weight: bold;
-  background-color: #fff9eba1;
+  background-color: var(--secondary-color-transparent);
   width: fit-content;
   margin: auto;
   border-width: 3px;
@@ -75,7 +80,7 @@ p {
 **** APP 
 ***/
 
-/* LOGO */
+/* Logo */
 img {
   position: relative;
 }
@@ -156,58 +161,41 @@ input[type="number"] {
   margin-top: 5px;
 }
 
-/* EventGenre Component */
+input[type="number"] {
+  width: 150px;
+}
 
+/* EventGenre Component */
 
 .data-vis-wrapper {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
-.data-vis-wrapper .recharts-responsive-container {
-  min-width: 100%;
-  display: flex;
-}
+
 .recharts-surface {
   overflow: visible;
 }
 
-
-
 .recharts-surface {
-  background-color: #fff9eba1;
-  position: relative;
-  padding-right: 30px;
+  background-color: var(--secondary-color-transparent);
 }
 
 line {
-  stroke:black;
+  stroke: var(--text-color);
 }
 
 .recharts-cartesian-axis-line {
-  stroke: black;
+  stroke: var(--text-color);
 }
 
 .recharts-symbols {
-  fill:rgb(53, 99, 53);
+  fill: var(--accent-color);
 }
 
 tspan {
   font-weight: 700;
-  color: black;
-  fill: black;
-}
-
-@media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
-    flex-direction: row;
-  }
-  .data-vis-wrapper .recharts-responsive-container {
-    flex-basis: 50%;
-    max-width: 50%;
-    min-width: auto;
-    margin: 0 auto;
-  }
+  color: var(--text-color);
+  fill: var(--text-color);
 }
 
 /* EventList Component */
@@ -230,7 +218,7 @@ tspan {
 
 .show-details-button {
   margin: 0;
-  background-color: var(--tertiary-color);
+  background-color: var(--accent-color);
   border-style: none;
   border-radius: 3px;
   padding: 5px 10px;
