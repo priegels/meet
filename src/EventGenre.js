@@ -6,7 +6,7 @@ const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
 
   const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
-  const COLORS = ["blue", "green", "red", "black", "white"];
+  const COLORS = ["#055a05", "#4A392C", "#aa0000", "#000", "#e8eadff6"];
 
   const getData = () => {
     let data = genres.map((genre) => {
@@ -28,8 +28,8 @@ const EventGenre = ({ events }) => {
       <PieChart width={400} height={400}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx= '50%'
+          cy= '50%'
           labelLine={false}
           outerRadius={80}
           fill="#055a05"
