@@ -90,7 +90,7 @@ class App extends Component {
           <div className="data-vis-wrapper">
             <EventGenre events={this.state.events} />      
             <ResponsiveContainer height={400} >
-              <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+              <ScatterChart margin={{ top: 20, right: 70, bottom: 20, left: 20 }}>
                 <CartesianGrid />
                 <XAxis type="category" dataKey="city" name="City" />
                 <YAxis type="number" dataKey="number" name="Number of Events" allowDecimals={false} />
