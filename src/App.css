@@ -178,6 +178,7 @@ input[type="number"] {
 
 .recharts-surface {
   background-color: var(--secondary-color-transparent);
+  border-radius: 4px;
 }
 
 line {
