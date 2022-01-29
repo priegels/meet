@@ -5,7 +5,7 @@ To build a serverless, progressive web application (PWA) built with React using 
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
 
-[Live project here] (https://priegels.github.io/meet/)
+[Live project here](https://priegels.github.io/meet/)
 
 ### Preview
 
