@@ -31,6 +31,15 @@
 
 .google-btn {
   background-color: #055A05;
+  border-radius: 3px;
+  margin: 1rem;
+  width: 184px;
+  height: 42px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.google-btn:hover {
+  box-shadow: 0 0 6px #055A05;
 }
 
 .btn-text {
@@ -46,11 +55,11 @@
   margin: 0;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .btn-text:hover {
-  box-shadow: 0 0 1px #4285f4;
+  box-shadow: 0 0 1px #055A05;
 }
 
 .btn-text:active {
