@@ -12,12 +12,12 @@ upcoming events.
 <p>Login View:
 <br>
 Access to the app is gained by signing in with a Google account. </p>
-(src/img/meet_login.png)
+![login](src/img/meet_login.png)
 
 <p>Main View: 
 <br>
 On the main page users can search for events from different cities, specify a number of events they want the app to display and view visualization of the search data. </p>
-(src/img/meet.png)
+![login](src/img/meet.png)
 
 ## Key Features
 1. The app uses OAuth2 authentication flow to allow the user to login.
