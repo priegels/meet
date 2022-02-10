@@ -93,7 +93,7 @@ class App extends Component {
                 <CartesianGrid />
                 <XAxis type="category" dataKey="city" name="City" />
                 <YAxis type="number" dataKey="number" name="Number of Events" allowDecimals={false} />
-                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                <Tooltip cursor={{ strokeDasharray: '3 3' }} label=""/>
                 <Scatter data={this.getData()} fill="#055a05" />
               </ScatterChart>
             </ResponsiveContainer>
